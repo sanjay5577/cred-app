@@ -1,0 +1,171 @@
+.hero-section-wrapper{
+    position: relative;
+}
+
+.hero-section {
+    min-height: 100vh;
+    text-align: center;
+}
+.mobile-menu-wrapper{
+    position: relative;
+}
+
+.header{
+    justify-content: space-between;
+    align-items: center;
+    padding : 60px 0px 40px;
+}
+
+.header-logo{
+    height: 66px;
+}
+
+.header-nav-item{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 20px 0px 36px;
+}
+.mobile-menu{
+    position: fixed;
+    background-color: var(--bg-black);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    height: 100vh;
+    width: 100vw;
+    text-align: left;
+    padding: 32px;
+    top: 0px;
+    left:0px;
+    transition: transform 0.3s ease-in-out 0s;
+    z-index: 1;
+
+}
+
+.overlay{
+    transform: translateX(0px);
+}
+
+.mobile-menu-button-wrapper{
+    z-index: 2;
+}
+
+.mobile-navbar{
+    margin-top:95px;
+    /* overflow-y: scroll; */
+    width: 90%;
+}
+
+.mobile-nav-item{
+    padding: 15px;
+    margin-bottom : 20px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--bg-light-gray)
+}
+
+.hero-heading{
+    font-family: denton;
+    font-size: 114px;
+    font-weight: 700;
+    line-height: 100px;
+    letter-spacing: -0.4px;
+
+
+}
+
+.hero-subheading{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0.5px;
+    margin-top: 30px;
+}
+
+.hero-claim-label{
+    background-color: var(--bg-gray);
+    width: 100%;
+    position: absolute;
+    height: 72px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+
+.claim-now{
+  color: var(--link-blue);
+  margin-left: 17px;
+}
+
+.claim-arrow{
+    height: 11px;
+    margin: 7px 0px 0px 8px;
+}
+
+@media all and (max-width: 1024px){
+
+    .header-logo{
+        height: 53px;
+    }
+
+    .header-nav-item{
+        margin: 0px 16px 0px 28px;
+    }
+   
+    .hero-heading{
+        font-size: 84px;
+        line-height: 84px;
+    
+    
+    }
+
+    .claim-now{
+        margin-left: 0px;
+    }
+      
+    
+}
+
+@media all and (max-width: 767px){
+
+    .header{
+        padding-bottom: 50px;
+    }
+
+    .hero-section{
+        min-height: 70vh;
+    }
+   
+    .hero-heading{
+        font-size: 52px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: -0.6px;
+        margin-top: 60px;
+    
+    
+    }
+    
+    .hero-subheading{
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        margin-top: 35px 0px;
+    }
+
+    .hero-claim-label{
+        height: 55px;
+        font-size: 13px;
+    }
+
+    .claim-arrow{
+        height: 6px;
+        margin: 2px 0px 0px 3px;
+    }
+    
+}
