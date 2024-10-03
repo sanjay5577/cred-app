@@ -1,0 +1,17 @@
+.cred-security{
+    background-color: var(--bg-purple);
+    background-image: url('../../assets/security-bg.jpg');
+}
+
+@media all and (max-width: 1024px){
+    .cred-security{
+        background-position: center bottom;
+    }
+}
+
+@media all and (max-width: 767px){
+    .cred-security{
+        min-height: 1150px;
+        background-position: right center;
+    }
+}

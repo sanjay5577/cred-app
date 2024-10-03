@@ -1,0 +1,17 @@
+.feel-special{
+    background-color: var(--bg-red);
+    background-image: url('../../assets/deserve-more-bg.jpg');
+}
+
+@media all and (max-width: 1024px){
+    .feel-special{
+        background-position: center bottom;
+    }
+}
+
+@media all and (max-width: 767px){
+    .feel-special{
+        min-height: 1150px;
+        background-position: right center;
+    }
+}

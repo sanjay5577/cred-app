@@ -1,0 +1,17 @@
+.cred-experience{
+    background-color: var(--bg-blue);
+    background-image: url('../../assets/money-matters-bg.jpg');
+}
+
+@media all and (max-width: 1024px){
+    .cred-experience{
+        background-position: center bottom;
+    }
+}
+
+@media all and (max-width: 767px){
+    .cred-experience{
+        min-height: 1150px;
+        background-position: right center;
+    }
+}

@@ -1,0 +1,8 @@
+.window-peek{
+    background-image: url('../../assets/neopop-image-mock.png');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
