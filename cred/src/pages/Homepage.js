@@ -8,11 +8,13 @@ import BrandsColab from "../components/BrandsColab";
 import WindowPeek from "../components/WindowPeek";
 import MobileScroll from "../components/MobileScroll";
 import Footer from "../components/common/Footer";
+import DownloadScroll from "../components/DownloadScroll";
 
 const Homepage = () => {
   return (
     <div>
       <HeroSection />
+      <DownloadScroll / >
       <ProductShowCase />
       <FeelSpecial />
       <BrandsColab />
