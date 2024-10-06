@@ -1,0 +1,17 @@
+.footer{
+  font-size: 40px;
+  font-weight: 600;
+}
+
+@media all and (max-width: 1024px){
+  .footer{
+    font-size: 32px;
+  }
+}
+
+@media all and  (max-width: 767px){
+  .footer{
+    font-size: 20px;
+  }
+}
+
