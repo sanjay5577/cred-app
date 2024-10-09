@@ -1,9 +1,20 @@
 import React from 'react'
+import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage"
+import Login from "./pages/Loginpage"
+import Register from "./pages/Registerpage"
+import AddCard from "./pages/AddCardpage"
 
 const App = () => {
   return (
-    <Homepage />
+      <Routes>
+        <Route exact path="/" element={<Homepage />}/>
+        <Route exact path="/login" element={<Login/>}/>
+  
+      <Route exact path="/register" element={<Register/>} />
+        <Route exact path="/addcard" element={<AddCard/>} />
+   
+    </Routes>
   )
 }
 

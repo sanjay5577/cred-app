@@ -10,7 +10,7 @@ const DownloadScroll = () => {
       const currentScrollPos = window.scrollY;
 
       // Show the div when scroll position exceeds 100vh (window height)
-      if (currentScrollPos >= window.innerHeight) {
+      if (currentScrollPos >= window.innerHeight + 200) {
         setShowDiv(true); // Show the div
       } else {
         setShowDiv(false); // Hide the div
