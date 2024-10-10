@@ -4,12 +4,13 @@ import "../../common/styles/commonClasses.css";
 import Button from "../common/Button";
 import uprightarrow from "../../assets/upright-arrow-alt.svg";
 import credlogo from "../../assets/cred-logo.webp";
+import { useNavigate, Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [showMobMenu, setShowMobMenu] = useState(false);
+  const navigate = useNavigate();
 
-  // const loginInfo = JSON.parse(localStorage.getItem("loginInfo"));
-  const loginInfo = "jik";
+  const loginInfo = JSON.parse(localStorage.getItem("loginInfo"));
   if (loginInfo) {
     const { username } = loginInfo;
     console.log(username);
@@ -18,6 +19,11 @@ const HeroSection = () => {
   const toggleMobileMenu = () => {
     setShowMobMenu(!showMobMenu);
   };
+
+  const handleLogout =()=>{
+    localStorage.clear();
+    navigate("/")
+  }
 
   return (
     <div className="hero-section-wrapper">
@@ -29,15 +35,15 @@ const HeroSection = () => {
             {loginInfo ? (
               <>
                 <div className="mobile-nav-item">credit score check</div>
-                <div className="mobile-nav-item">add credit card</div>
-                 <div className="mobile-nav-item">view cards</div>
+                <div className="mobile-nav-item" onClick={()=> navigate("/addcard")}>add credit card</div>
+                 <div className="mobile-nav-item" onClick={()=> navigate("/viewcards")}>view cards</div>
                 {/* <div className="mobile-nav-item">credit card bill payment</div> */}
-                <div className="mobile-nav-item">logout</div>
+                <Link className="mobile-nav-item" onClick={handleLogout}>logout</Link>
               </>
             ) : (
               <>
-                <div className="mobile-nav-item">Login</div>
-                <div className="mobile-nav-item">Register</div>
+                <Link className="mobile-nav-item" to="/login">Login</Link>
+                <Link className="mobile-nav-item" to="/register">Register</Link>
               </>
             )}
           </div>
@@ -62,15 +68,15 @@ const HeroSection = () => {
             {loginInfo ? (
               <>
                 <div className="header-nav-item">credit score check</div>
-                <div className="header-nav-item">add credit card</div>
-                <div className="header-nav-item">view cards</div>
+                <div className="header-nav-item" onClick={()=> navigate("/addcard")}>add credit card</div>
+                <div className="header-nav-item"  onClick={()=> navigate("/viewcards")}>view cards</div>
                 {/* <div className="header-nav-item">credit card bill payment</div> */}
-                <div className="header-nav-item">logout</div>
+                <Link className="header-nav-item" onClick={handleLogout}>logout</Link>
               </>
             ) : (
               <>
-                <div className="header-nav-item">Login</div>
-                <div className="header-nav-item">Register</div>
+                <Link className="header-nav-item" to="/login">Login</Link>
+                <Link className="header-nav-item" to="/register">Register</Link>
               </>
             )}
           </div>

@@ -1,16 +1,14 @@
 import React from 'react';
-import AddCard from '../components/AddCard';
+import CardsList from '../components/ViewCards';
 import Header from '../components/common/Header';
 
-const AddCardpage = () => {
-  
+const ViewCardspage = () => {
   return (
     <div>
       <Header text='back' />
-      <AddCard  />
-      
+      <CardsList  />
     </div>
   );
 };
 
-export default AddCardpage ;
+export default ViewCardspage ;

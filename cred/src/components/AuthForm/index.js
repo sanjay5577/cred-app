@@ -4,7 +4,6 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import { useNavigate, Link } from "react-router-dom";
 import "./authForm.css";
-import Login from "../../pages/Loginpage";
 
 const AuthForm = ({ isLogin }) => {
   const [formData, setFormData] = useState({
@@ -25,24 +24,26 @@ const AuthForm = ({ isLogin }) => {
     });
   };
 
-  const persistLogin = (token, username, balance) => {
+  const persistLogin = (token, username, userid) => {
     const loginInfo = {
       token: token,
       username: username,
-      balance: balance,
+      userid: userid,
     };
     localStorage.setItem("loginInfo", JSON.stringify(loginInfo));
   };
 
   const login = async (loginData) => {
     try {
-      // const res = await axios.post(`${config.endpoint}/auth/login`,formData);
-      // if(res.status === 201){
+      const res = await axios.post('https://cred-backend-0j8t.onrender.com/v1/auth/login',loginData);
+      console.log(res.data)
+      if(res.status === 200){
       enqueueSnackbar("Logged in successfully", { variant: "success" });
-      // }
-      // persistLogin(res.data.token, res.data.username, res.data.balance);
-      navigate.push("/", { from: "Login" });
+      }
+      persistLogin(res.data.tokens.access.token, res.data.user.name, res.data.user._id);
+      navigate("/", { from: "login" });
     } catch (err) {
+      console.log(err)
       if (err.response.status === 400) {
         enqueueSnackbar(`${err.response.data.message}`, { variant: "error" });
       } else {
@@ -56,11 +57,11 @@ const AuthForm = ({ isLogin }) => {
 
   const register = async (registerData) => {
     try {
-      // const res = await axios.post(`${config.endpoint}/auth/register`,formData);
-      // if(res.status === 201){
+      const res = await axios.post('https://cred-backend-0j8t.onrender.com/v1/auth/register',registerData);
+      if(res.status === 201){
       enqueueSnackbar("Registered Successfully", { variant: "success" });
-      navigate("/login", { from: "Register" });
-      // }
+      navigate("/login", { from: "register" });
+      }
     } catch (err) {
       if (err.response.status === 400) {
         enqueueSnackbar(`${err.response.data.message}`, { variant: "error" });
@@ -103,7 +104,7 @@ const AuthForm = ({ isLogin }) => {
         login({ email: formData.email, password: formData.password });
       } else {
         register({
-          username: formData.username,
+          name: formData.username,
           email: formData.email,
           password: formData.password,
         });

@@ -16,6 +16,12 @@
     flex-direction: column;
 }
 
+.header{
+    justify-content: space-between;
+    align-items: center;
+    padding : 60px 0px 40px;
+}
+
 .photo-section{
     height: 100%;
     min-height: 100vh;

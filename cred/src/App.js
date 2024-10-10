@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage"
 import Login from "./pages/Loginpage"
 import Register from "./pages/Registerpage"
 import AddCard from "./pages/AddCardpage"
+import ViewCardspage from './pages/ViewCardspage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
   
       <Route exact path="/register" element={<Register/>} />
         <Route exact path="/addcard" element={<AddCard/>} />
+        <Route exact path="/viewcards" element={<ViewCardspage/>} />
    
     </Routes>
   )

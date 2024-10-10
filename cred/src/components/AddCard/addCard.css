@@ -1,0 +1,62 @@
+.full-container{
+  height: 80vh;
+}
+
+.addcard-title{
+  color: white;
+}
+
+
+
+.card-form-container{
+  max-width: 400px;
+}
+
+.form-container{
+  margin: 40px;
+}
+
+.input-field{
+  margin: 10px;
+   padding: 12px;
+    border: 1px solid var(--bg-gray);
+    /* Gray input border */
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: var(--bg-black);
+    /* White input background */
+    color: var(--white);
+    /* Black input text */
+    transition: border-color 0.3s;
+  }
+
+  .input-field:focus {
+    border-color: var(--white);
+    /* Black border on focus */
+    outline: none;
+  }
+
+.submit-card{
+  margin-top: 20px;
+ padding: 12px;
+  background-color: var(--bg-purple);
+  /* Black button background */
+  border: none;
+  color: var(--white);
+  ;
+  /* White button text */
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-card:hover {
+  background-color: #cb27ec ;
+  /* Darker black hover */
+}
+
+.submit-card:active {
+  background-color: #09000a;
+  /* Even darker active state */
+}

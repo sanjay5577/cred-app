@@ -24,6 +24,7 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0px 20px 0px 36px;
+    cursor: pointer;
 }
 .mobile-menu{
     position: fixed;
@@ -63,7 +64,8 @@
     border-radius: 15px;
     font-size: 14px;
     font-weight: 600;
-    background-color: var(--bg-light-gray)
+    background-color: var(--bg-light-gray);
+    cursor: pointer;
 }
 
 .hero-heading{
