@@ -1,0 +1,66 @@
+.pay-bill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f8fc;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .amount-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+  }
+  
+  .amount-input:focus {
+    border: 2px solid #4caf50;
+  }
+  
+  .pay-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pay-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Success animation styling */
+  .success-animation {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
