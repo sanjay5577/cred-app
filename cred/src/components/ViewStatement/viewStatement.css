@@ -1,14 +1,4 @@
-/* General Page Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('https://images.unsplash.com/photo-1565512635781-4e90c1f1da46');
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-  }
-  
+
   .page-container {
     background-color: rgba(0, 0, 0, 0.7); /* Dark overlay to make content readable */
     min-height: 100vh;

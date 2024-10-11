@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation  } from 'react-router-dom';
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import './payBill.css'
@@ -10,12 +10,14 @@ const PayBill = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const { enqueueSnackbar } = useSnackbar();
-
+ const location = useLocation();  // Access the passed card details
+  const { cardNumber } = location.state;  // Extract cardNumber from location state
 
   const { token} = JSON.parse(localStorage.getItem('loginInfo'));
 
   // Handle the pay bill API call
   const handlePay = async () => {
+    if(amount.trim() >0 ){
     try {
       const res = await axios.post(`https://cred-backend-0j8t.onrender.com/v1/cards/${cardId}/pay`,{
         amount: amount
@@ -43,12 +45,19 @@ const PayBill = () => {
         );
       }
     }
+    }
+    else{
 
+enqueueSnackbar(
+          "Amount should be greater than 0",
+          { variant: "warning" },
+        );
+    }
   };
 
   return (
     <div className="pay-bill-container">
-      <h2>Pay Bill for Card ID: {cardId}</h2>
+      <h2>Pay Bill for Card Number: {cardNumber}</h2>
       <input
         type="number"
         placeholder="Enter amount"

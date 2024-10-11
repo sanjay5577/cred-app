@@ -3,3 +3,51 @@
   width: 100%;
   margin-bottom: 20px;
 }
+
+.card-box{
+  width: 320px;
+  padding: 20px;
+  position: relative;
+  background-color: var(--bg-light-gray);
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.card-number{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color:  var(--bg-purple);
+  padding: 5px;
+  text-align: center;
+}
+.card-item{
+ text-align: center;
+ background-color: var(--bg-purple);
+ border-radius: 10px;
+ margin: 10px;
+ padding: 10px;
+ font-family: 18px;
+ font-weight: 600;
+}
+
+.Card-container{
+  margin: 5px;
+}
+
+.view-statement{
+  border: 1px solid rgb(23, 0, 44);
+  cursor: pointer;
+}
+
+.pay-bill{
+  margin: 0px 20px;
+  background-color: rgb(217, 181, 252);
+   width: 100px;
+  height: 100%;
+  border-radius: 8px; 
+  border: 1px solid rgb(27, 1, 51);
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 700;
+}

@@ -65,14 +65,10 @@ const fetchCardsForUser = async () => {
 
 
 
-  const handleViewStatement = (cardId) => {
+  const handleViewStatement = (cardId , cardNumber) => {
     // Navigate to the ViewStatement page with cardId as a URL parameter
-    navigate(`/view-statement/${cardId}`);
+    navigate(`/view-statement/${cardId}` , { state: { cardNumber : cardNumber } });
   };
-
-  const handlePayBill = (cardId) => {
-  navigate(`/pay/${cardId}`);
-};
 
 
   return (
@@ -83,19 +79,27 @@ const fetchCardsForUser = async () => {
         
         (cards && cards.length > 0 ? (
           cards.map((card, index) => (
-          <div>
-          <div>{index+1}</div>
+          <div className='card-box'>
+          <div className='card-number'>{index+1}</div>
             <CardComponent
               key={index}
               cardNumberFromApi={card.cardNumber}  // Assuming the API returns cardNumber
               cardHolderFromApi={card.nameOnCard} // Assuming the API returns cardHolder
             />
-            <div  onClick={() => handleViewStatement(card._id)}>View Statement</div>
+            <div className='card-item view-statement' onClick={() => handleViewStatement(card._id , card.cardNumber)}>View Statement</div>
             {card.outstandingAmount === 0 ? 
-            <div>Fully Paid</div> :
-            <div>
-              <div>Bill Amount : ₹{card.outstandingAmount}</div>
-              <div onClick={() => handlePayBill(card._id)}>Pay Bill</div>
+            <div className='card-item'>Fully Paid</div> :
+            <div className='card-item flex'>
+              <div>Bill Amount :  ₹{card.outstandingAmount}</div>
+              <div  className='pay-bill'>
+              <Link
+            to={{
+              pathname: `/pay/${card._id}`,
+            }}
+            state={{ cardNumber: card.cardNumber }}  // Pass card number as state
+          >
+            Pay Bill
+          </Link></div>
             </div>
             }
             </div>

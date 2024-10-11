@@ -1,4 +1,9 @@
 .left-arrow{
-  height: 30px;
-  width: 35px;
+  height: 25px;
+  width: 30px;
+}
+
+.header span{
+  font-size: 18px;
+  font-weight: 600;
 }

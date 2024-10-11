@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-credit-card-payment';
+import './viewCards.css'
 
 const CardComponent = ({ cardNumberFromApi, cardHolderFromApi }) => {
   const [issuer, setIssuer] = useState('');

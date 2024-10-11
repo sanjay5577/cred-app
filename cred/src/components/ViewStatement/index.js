@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams , useLocation  } from 'react-router-dom';
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import './viewStatement.css'; // Assuming the CSS is in ViewStatement.css
@@ -11,8 +11,11 @@ const ViewStatement = () => {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(new Date().getFullYear());
    const { enqueueSnackbar } = useSnackbar();
+   const location = useLocation();  // Access the passed card details
+  const { cardNumber } = location.state;  // Extract cardNumber from location state
 
   const { token} = JSON.parse(localStorage.getItem('loginInfo'));
+
 
   const fetchStatement = async(month, year) => {
      try {
@@ -82,7 +85,7 @@ const ViewStatement = () => {
 
   return (
     <div className="page-container">
-      <h1>Statement for Card ID: {cardId}</h1>
+      <h1>Statement for Card Number: {cardNumber}</h1>
 
       <div>
         <label>
