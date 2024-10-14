@@ -3,6 +3,7 @@ import { useParams, useLocation  } from 'react-router-dom';
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import './payBill.css'
+import video from '../../assets/successvideo.mp4'
 
 const PayBill = () => {
   const { cardId } = useParams();  // Get cardId from route
@@ -57,9 +58,9 @@ enqueueSnackbar(
 
   return (
     <div className="pay-bill-container">
-      <h2>Pay Bill for Card Number: {cardNumber}</h2>
+      <h2 className='payBill-header'>Pay Bill for Card Number: {cardNumber}</h2>
       <input
-        type="number"
+        type="text"
         placeholder="Enter amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
@@ -71,6 +72,11 @@ enqueueSnackbar(
       {isSuccess && (
         <div className="success-animation">
           <p>Payment Successful!</p>
+          <video autoPlay loop muted className="successvideo-background">
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    
+</video>
         </div>
       )}
     </div>

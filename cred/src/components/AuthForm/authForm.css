@@ -4,8 +4,8 @@
   align-items: center;
   /* height: 0vh; */
   /* background: linear-gradient(to right, #272626 0%, black 100%); */
-  background-image: url(../../assets/black-background-img.jpg);
-  background-size: cover;
+  /* background-image: url(../../assets/black-background-img.jpg);
+  background-size: cover; */
   /* Ensures the image covers the entire area */
   background-position: center;
   /* Centers the image */

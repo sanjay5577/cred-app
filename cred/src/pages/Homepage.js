@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <div>
       <HeroSection />
-      <DownloadScroll / >
+      <DownloadScroll />
       <ProductShowCase />
       <FeelSpecial />
       <BrandsColab />

@@ -5,7 +5,7 @@ import Header from '../components/common/Header';
 const PayBillpage = () => {
   return (
     <div>
-      <Header text='back' />
+      <Header text='back' path='paybill'/>
       <PayBill  />
     </div>
   );

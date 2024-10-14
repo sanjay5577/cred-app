@@ -90,7 +90,7 @@ const ViewStatement = () => {
       <div>
         <label>
           Month:
-          <select value={month} onChange={(e) => setMonth(parseInt(e.target.value))}>
+          <select value={month} onChange={(e) => setMonth(parseInt(e.target.value))} className='dropdown'>
             {months.map((m) => (
               <option key={m.value} value={m.value}>
                 {m.label}
@@ -101,7 +101,7 @@ const ViewStatement = () => {
 
         <label>
           Year:
-          <select value={year} onChange={(e) => setYear(parseInt(e.target.value))}>
+          <select value={year} onChange={(e) => setYear(parseInt(e.target.value))} className='dropdown'>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}
@@ -110,25 +110,27 @@ const ViewStatement = () => {
           </select>
         </label>
 
-        <button onClick={handleView}>View</button>
+        <button onClick={handleView} className='button-viewstatment'>View</button>
       </div>
 
       <div className="button-row">
-        <button onClick={handleCurrentMonth}>Current Month Statement</button>
-        <button onClick={handlePreviousMonth}>Previous Month Statement</button>
+        <button onClick={handleCurrentMonth} className='button-viewstatment'>Current Month Statement</button>
+        <button onClick={handlePreviousMonth} className='button-viewstatment'>Previous Month Statement</button>
       </div>
 
       {statement && statement.length >0 ? (
         <div>
           <h2>Statement Details</h2>
+          <div className='flex absolute-center transaction-card-container'>
           {statement.map((transactionData, index) => (
             <div key={index} className="transaction-card">
-              <p>Amount: {transactionData.transactions[0].amount}</p>
-              <p>Vendor: {transactionData.transactions[0].vendor}</p>
-              <p>Type: {transactionData.transactions[0].type}</p>
-              <p>Category: {transactionData.transactions[0].category}</p>
+              <p>Amount :  ₹{transactionData.transactions[0].amount}</p>
+              <p>Vendor : {transactionData.transactions[0].vendor}</p>
+              <p>Type : {transactionData.transactions[0].type}</p>
+              <p>Category : {transactionData.transactions[0].category}</p>
             </div>
           ))}
+          </div>
         </div>
       ) : (
         <p>No statement data available.</p>

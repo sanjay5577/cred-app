@@ -5,7 +5,7 @@ import Header from '../components/common/Header';
 const ViewStatementspage = () => {
   return (
     <div>
-      <Header text='back' />
+      <Header text='back' path='viewstatements'/>
       <StatementList  />
     </div>
   );

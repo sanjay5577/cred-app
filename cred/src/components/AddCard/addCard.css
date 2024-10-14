@@ -1,9 +1,10 @@
-.full-container{
+/* .full-container{
   height: 80vh;
-}
+} */
 
 .addcard-title{
   color: white;
+  margin-top: 0px; 
 }
 
 

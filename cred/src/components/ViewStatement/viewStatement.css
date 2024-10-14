@@ -1,6 +1,6 @@
 
   .page-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay to make content readable */
+    background-color: var(--bg-black); /* Dark overlay to make content readable */
     min-height: 100vh;
     padding: 40px;
     text-align: center;
@@ -12,31 +12,32 @@
     margin-bottom: 20px;
   }
   
-  label {
+  /* label {
     font-weight: bold;
     font-size: 1.2em;
-  }
+    color: #ddd1d7;
+  } */
   
-  select {
+  .dropdown {
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 10px;
     border: none;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgb(230, 221, 221);
+    color: #33001e;
     outline: none;
     transition: background 0.3s ease-in-out;
   }
   
-  select:hover {
-    background: rgba(255, 255, 255, 0.4);
+  .dropdown:hover {
+    background: rgba(255, 255, 255, 0.716);
   }
   
-  button {
+  .button-viewstatment {
     padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
-    background-color: #FF6B6B;
+    background-color: var(--link-blue);
     border: none;
     color: white;
     font-size: 1.2em;
@@ -44,8 +45,8 @@
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
   }
   
-  button:hover {
-    background-color: #FF4747;
+  .button-viewstatment:hover {
+    background-color: var(--bg-blue);
     transform: translateY(-5px);
   }
   
@@ -53,15 +54,18 @@
     outline: none;
   }
   
+  .transaction-card-container{
+    flex-wrap: wrap;
+  }
   /* Transaction Card Styling */
   .transaction-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    background: var(--bg-light-gray);
+    border-radius: 20px;
     padding: 20px;
-    margin: 15px auto;
-    max-width: 600px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    text-align: left;
+    margin: 20px;
+    max-width: 250px;
+    box-shadow: 0 8px 16px rgba(37, 37, 37, 0.3);
+    text-align: center;
     transition: transform 0.3s ease-in-out;
     opacity: 0;
     animation: slideInUp 0.6s forwards;
@@ -72,9 +76,9 @@
   }
   
   .transaction-card p {
-    margin: 5px 0;
-    font-size: 1.1em;
-    color: #fff;
+    margin: 10px 0;
+    font-size: 18px;
+    color: var(--bg-white);
   }
   
   /* Button Row for Current/Previous Month */

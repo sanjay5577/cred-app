@@ -4,11 +4,11 @@ import credlogo from '../../../assets/cred-logo.webp'
 import leftarrow from '../../../assets/white-arrow-left.png'
 import {  Link } from "react-router-dom";
 
-const Header = ({text}) => {
+const Header = ({text , path}) => {
   return (
     <div className='flex header max-width'>
       <img src={credlogo} alt="logo" className="header-logo" />
-      <Link to="/">
+      <Link to={`${path ==='viewstatements' || path === 'paybill' ? '/viewcards' :'/'} `}>
         <div className='flex absolute-center'>
           <img src={leftarrow} alt="arrow" className="left-arrow" />
           <span>{text}</span>

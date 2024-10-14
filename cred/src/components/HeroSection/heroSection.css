@@ -53,7 +53,6 @@
 
 .mobile-navbar{
     margin-top:95px;
-    /* overflow-y: scroll; */
     width: 90%;
 }
 
@@ -66,6 +65,7 @@
     font-weight: 600;
     background-color: var(--bg-light-gray);
     cursor: pointer;
+    display: block;
 }
 
 .hero-heading{
